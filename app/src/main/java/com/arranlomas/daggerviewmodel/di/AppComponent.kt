@@ -1,7 +1,7 @@
 package com.arranlomas.daggerviewmodel.di
 
 import com.arranlomas.daggerviewmodel.MainApplication
-import com.arranlomas.daggerviewmodel.repository.RepositoryModule
+import com.arranlomas.daggerviewmodel.repository.DependencyProviderModule
 import com.arranlomas.daggerviewmodel.ui.MainActivityModule
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         AndroidSupportInjectionModule::class,
         MainActivityModule::class,
-        RepositoryModule::class,
+        DependencyProviderModule::class,
         ViewModelModule::class))
 interface AppComponent : AndroidInjector<DaggerApplication> {
     fun inject(app: MainApplication)

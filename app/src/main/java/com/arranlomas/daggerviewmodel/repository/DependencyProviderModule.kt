@@ -7,9 +7,9 @@ import dagger.Provides
  * Created by arran on 25/02/2018.
  */
 @Module
-class RepositoryModule {
+class DependencyProviderModule {
     @Provides
-    fun providesScoreRepository(): ISomeRepository {
-        return SomeRepository()
+    fun providesScoreRepository(): ISomeDependency {
+        return SomeDependency()
     }
 }
