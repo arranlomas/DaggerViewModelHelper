@@ -1,4 +1,4 @@
-#DaggerViewModelHelper
+# DaggerViewModelHelper
 
 This library enables you to easily provide ViewModels with their dependencies and inject a view model factory into the Fragment or Activity to provide the ViewModel with its dependencies
 
