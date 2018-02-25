@@ -14,9 +14,23 @@ Solution
 
 Using daggers multibing we can create a map with the ViewModels and a generic ```ViewModelProvider.Factory``` that can be injected into the Activity or Fragment which can be used the to get the desired ```ViewModel```
 
-## Instalation
+## Installation
 
-```TODO```
+Ensure you have the jcentre() dependencies in your root build.gradle (most android projects should have this by default)
+```
+allprojects {
+  repositories {
+    ...
+    jcenter()
+  }
+}
+```
+Add the dependency in the build.gradle of any app or module.
+```
+dependencies {
+  implementation 'com.github.arranlomas.daggerviewmodelhelper:daggerviewmodelhelper:0.1.0'
+}
+```
 
 ## Setup
 (See the [sample app](https://github.com/arranlomas/DaggerViewModelHelper/tree/master/app) for full details
