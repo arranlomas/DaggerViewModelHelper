@@ -33,7 +33,7 @@ dependencies {
 ```
 
 ## Setup
-(See the [sample app](https://github.com/arranlomas/DaggerViewModelHelper/tree/master/app) for full details
+(See the [sample app](https://github.com/arranlomas/DaggerViewModelHelper/tree/master/app) for full details)
 
 Main Application
 ```
