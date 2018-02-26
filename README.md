@@ -1,16 +1,18 @@
 # DaggerViewModelHelper
 
-This library enables you to easily provide ViewModels with their dependencies and inject a view model factory into the Fragment or Activity to provide the ViewModel with its dependencies
+This library enables you to easily provide ViewModels with their dependencies and inject a view model factory into a Fragment or Activity.
 
-An android library to help with, and reduce the boilerplate of, implmenting dagger with android architecture ViewModel component inspired by the [google github sample](https://github.com/googlesamples/android-architecture-components/tree/e33782ba54ebe87f7e21e03542230695bc893818/GithubBrowserSample)
+This android library simply reduces the boilerplate of implmenting dagger with android architecture ViewModel component inspired by the [google github sample](https://github.com/googlesamples/android-architecture-components/tree/e33782ba54ebe87f7e21e03542230695bc893818/GithubBrowserSample)
 
-Problem 
+### Problem 
 
 The default ViewModel Provider doesn't allow for constructor inection
+
 ```ViewModelProviders.of(this).get(MyViewModel.class);```
+
 So we have to create a ```ViewModelProvider.Factory``` that can provide the dependencies. However this is non-trivial and requires some boilerplate to do cleanly with dagger.
 
-Solution 
+### Solution 
 
 Using daggers multibing we can create a map with the ViewModels and a generic ```ViewModelProvider.Factory``` that can be injected into the Activity or Fragment which can be used the to get the desired ```ViewModel```
 
@@ -48,6 +50,7 @@ class Application : DaggerApplication() {
 ```
 
 ViewModelModule
+
 ```
 @Module
 abstract class ViewModelModule {
@@ -63,6 +66,7 @@ abstract class ViewModelModule {
 ```
 
 ViewModel
+
 IMPORATANT - note the @Inject constructor with the dependencies
 ```
 class MainViewModel @Inject constructor(private val someDependency: ISomeDependency) : ViewModel() {
@@ -73,6 +77,7 @@ class MainViewModel @Inject constructor(private val someDependency: ISomeDepende
 ```
 
 Activity
+
 IMPORTANT - note how the view model factory is injeccted and how it implements Injectable (this is so we don't have to call AndroidInjection.inject(this) just like with DaggerActivity but DaggerActivity cannot be used with ViewModelProvider
 ```
 class MainActivity : AppCompatActivity(), Injectable {
